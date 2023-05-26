@@ -8,9 +8,11 @@ const AvatarButton = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-  setAnchorEl(event.currentTarget);
-  setMenuOpen(true);
-  };
+    const target = event.currentTarget;
+    setAnchorEl(target instanceof HTMLElement ? target : null);
+    setMenuOpen(true);
+};
+
 
 
   const handleMenuClose = () => {
