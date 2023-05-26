@@ -14,11 +14,10 @@ import ContactSection from './PortfolioDocComponents/ContactSection';
 import ResumeDownload from './PortfolioDocComponents/ResumeDownload';
 import PhotoSlide from './PortfolioDocComponents/PhotoSlide'
 import React, {ReactNode} from 'react';
-
-import { Paper, Box } from '@mui/material';
+import { Paper, Box, PaperProps } from '@mui/material';
 import { styled } from '@mui/system';
 
-const ScrollContainer = styled(Box)(({ theme }) => ({
+const ScrollContainer = styled(Paper)<PaperProps>(({ theme }) => ({
   flex: '1 1 auto',
   padding: theme.spacing(2),
 }));
