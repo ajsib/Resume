@@ -9,10 +9,10 @@ import CircleOutlined from '@mui/icons-material/CircleOutlined'; // placeholder 
 const AchievementsSection = () => {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleAccordionChange = (panel) => (event, isExpanded) => {
+  const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false);
   };
-
+  
   return (
     <Accordion expanded={expanded === 'achievements'} onChange={handleAccordionChange('achievements')}>
       <AccordionSummary
