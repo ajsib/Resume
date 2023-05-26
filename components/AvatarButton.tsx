@@ -5,12 +5,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const AvatarButton = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-    setMenuOpen(true);
+  setAnchorEl(event.currentTarget);
+  setMenuOpen(true);
   };
+
 
   const handleMenuClose = () => {
     setMenuOpen(false);
