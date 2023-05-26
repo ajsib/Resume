@@ -1,14 +1,18 @@
 // ./components/AvatarButton.tsx
 import { IconButton, Avatar, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import React, {useRef} from 'react';
 
 const AvatarButton = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  useEffect(() => {
+    setAnchorEl(document.querySelector('#avatar-button'));
+  }, []);
+
+  const handleMenuOpen = () => {
     setMenuOpen(true);
   };
 
@@ -18,26 +22,28 @@ const AvatarButton = () => {
 
   return (
     <>
-      <IconButton color="inherit" onClick={handleMenuOpen}>
+      <IconButton id="avatar-button" color="inherit" onClick={handleMenuOpen}>
         <Avatar src="/avatar.png" alt="Avatar" />
       </IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        open={menuOpen}
-        onClose={handleMenuClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-      >
-        <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
-        <MenuItem onClick={handleMenuClose}>About</MenuItem>
-        <MenuItem onClick={handleMenuClose}>Documents</MenuItem>
-      </Menu>
+      {typeof document !== 'undefined' && (
+        <Menu
+          anchorEl={anchorEl}
+          open={menuOpen}
+          onClose={handleMenuClose}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+        >
+          <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+          <MenuItem onClick={handleMenuClose}>About</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Documents</MenuItem>
+        </Menu>
+      )}
     </>
   );
 };
