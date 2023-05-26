@@ -13,6 +13,7 @@ import AchievementsSection from './PortfolioDocComponents/AchievementsSection';
 import ContactSection from './PortfolioDocComponents/ContactSection';
 import ResumeDownload from './PortfolioDocComponents/ResumeDownload';
 import PhotoSlide from './PortfolioDocComponents/PhotoSlide'
+import React, {ReactNode} from 'react';
 
 import { Paper, Box } from '@mui/material';
 import { styled } from '@mui/system';
@@ -22,7 +23,11 @@ const ScrollContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
 }));
 
-const PortfolioDoc = ({ children }) => {
+interface PortfolioDocProps {
+  children : ReactNode;
+}
+
+const PortfolioDoc = ({ children }: PortfolioDocProps) => {
   // ...
   return (
     <ScrollContainer component={Paper} elevation={3}>
