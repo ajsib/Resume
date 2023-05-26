@@ -12,7 +12,7 @@ import ProjectSection from './PortfolioDocComponents/Projects/ProjectSection';
 import AchievementsSection from './PortfolioDocComponents/AchievementsSection';
 import ContactSection from './PortfolioDocComponents/ContactSection';
 import ResumeDownload from './PortfolioDocComponents/ResumeDownload';
-import PhotoSlide from './PortfolioDocComponents/PhotoSlide.tsx'
+import PhotoSlide from './PortfolioDocComponents/PhotoSlide'
 
 import { Paper, Box } from '@mui/material';
 import { styled } from '@mui/system';
