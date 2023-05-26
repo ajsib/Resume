@@ -9,7 +9,7 @@ const AvatarButton = () => {
 
 const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
   const target = event.currentTarget as HTMLElement;
-  setAnchorEl(target);
+  setAnchorEl(event.currentTarget as HTMLElement);
   setMenuOpen(true);
 };
 
