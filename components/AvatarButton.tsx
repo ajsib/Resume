@@ -7,11 +7,12 @@ const AvatarButton = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const target = event.currentTarget;
-    setAnchorEl(target instanceof HTMLElement ? target : null);
-    setMenuOpen(true);
+const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const target = event.currentTarget as HTMLElement;
+  setAnchorEl(target);
+  setMenuOpen(true);
 };
+
 
 
 
