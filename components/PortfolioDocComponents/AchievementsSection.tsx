@@ -10,7 +10,11 @@ const AchievementsSection = () => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false);
+    if (isExpanded) {
+      setExpanded(panel);
+    } else {
+      setExpanded(false);
+    }
   };
   
   return (
