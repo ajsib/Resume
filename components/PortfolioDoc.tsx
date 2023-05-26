@@ -29,7 +29,7 @@ interface PortfolioDocProps {
 const PortfolioDoc = ({ children }: PortfolioDocProps) => {
   // ...
   return (
-    <ScrollContainer component={Paper} elevation={3}>
+    <ScrollContainer elevation={3}>
       {/* <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom>
         Portfolio
       </Typography>
